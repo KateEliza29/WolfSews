@@ -1,0 +1,715 @@
+/** Style Index 
+
+1- Whole Page Styles. 
+2- Navigation Bar Styles. 
+3- Burger Navigation Styles.
+4- Hero Section Styles. 
+5- About Section Styles. 
+6- Services Styles. 
+7- Testimonials Styles. 
+8- Contact Styles.
+9- Footer Styles. 
+10- Media Queries. 
+
+**/
+/* Sass Variables */
+/* Sass Mixins */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: 'mostly-mono';
+  src: url("mostly-mono.ttf");
+}
+
+@font-face {
+  font-family: 'goodfish';
+  src: url("goodfish.ttf");
+}
+
+h1 {
+  font-family: mostly-mono;
+  color: #fa3c5a;
+  font-size: 6rem;
+  text-shadow: 2px 2px 4px gray;
+}
+
+h2 {
+  font-family: goodfish;
+  color: #fc6c8c;
+  font-size: 2rem;
+}
+
+h3 {
+  font-family: mostly-mono;
+  font-size: 3rem;
+  margin: 10px;
+}
+
+h4 {
+  font-family: mostly-mono;
+  font-size: 2rem;
+}
+
+p {
+  font-family: goodfish;
+  font-size: 1.2rem;
+}
+
+small {
+  font-family: mostly-mono;
+  font-size: 1.2rem;
+  margin: 5px;
+}
+
+i {
+  margin: 5px;
+}
+
+button {
+  background: #48b98a;
+  border-radius: 5px;
+  color: #baf1e4;
+  font-family: mostly-mono;
+  font-size: 2rem;
+  margin: 15px;
+  border: 1px solid #48b98a;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  outline: none;
+  width: 300px;
+  text-align: center;
+}
+
+button a {
+  text-decoration: none;
+  color: #baf1e4;
+}
+
+button a:visited {
+  color: #baf1e4;
+}
+
+button:hover {
+  -webkit-animation: wobble 0.3s;
+          animation: wobble 0.3s;
+  cursor: pointer;
+}
+
+button:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  50% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  100% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+}
+
+@keyframes wobble {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  50% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  100% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+}
+
+svg {
+  display: block;
+}
+
+.logo {
+  width: 100px;
+  margin: 5px;
+}
+
+#pageWrap {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.header {
+  width: 100%;
+  background: #baf1e4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#header2 {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  top: 0px;
+}
+
+.header a,
+#burger a {
+  font-family: mostly-mono;
+  color: #48b98a;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.header a:hover {
+  color: #fa3c5a;
+}
+
+.header a:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+#openButton {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  color: #fa3c5a;
+  font-size: 3rem;
+  display: none;
+  background-color: #baf1e4;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#burger {
+  height: 100vh;
+  background: #48b98a;
+  z-index: 2;
+  width: 0;
+  float: left;
+  text-align: center;
+  overflow: hidden;
+  position: fixed;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+#burger > div {
+  position: relative;
+  top: 100px;
+}
+
+#burger div {
+  margin-bottom: 50px;
+}
+
+#burger a {
+  color: #baf1e4;
+}
+
+#burger a:hover {
+  color: #fc6c8c;
+}
+
+#mobLogo {
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+#closeNav {
+  text-align: right;
+  margin: 10px;
+}
+
+#hero {
+  background: #baf1e4;
+  height: 55vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#hero div {
+  max-width: 70vw;
+  margin: 15px;
+  margin-left: 60px;
+}
+
+#hero .callEmail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 55vh;
+  margin-bottom: 55vh;
+  margin-top: 55vh;
+}
+
+#aboutImage {
+  background: url("images/sewing-about.jpg");
+  background-size: cover;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#about div {
+  min-width: 40vw;
+  height: 55vh;
+  margin: 10px;
+}
+
+#about div:nth-child(2) {
+  padding: 10px;
+  text-align: center;
+}
+
+#services {
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 55vh;
+}
+
+.bottom {
+  width: 400px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 5px;
+  background-size: cover;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bottom:first-child {
+  -webkit-box-shadow: 0px 0px 0px;
+          box-shadow: 0px 0px 0px;
+  text-align: center;
+}
+
+.bottom i {
+  font-size: 3rem;
+  margin: 15px;
+}
+
+.top {
+  background-color: #48b98a;
+  height: 300px;
+  width: 400px;
+  border-radius: 5px;
+  -webkit-clip-path: circle(30% at 1% 1%);
+          clip-path: circle(30% at 1% 1%);
+  -webkit-transition: 0.7s ease;
+  transition: 0.7s ease;
+  -webkit-transition-property: background-color, -webkit-clip-path;
+  transition-property: background-color, -webkit-clip-path;
+  transition-property: clip-path, background-color;
+  transition-property: clip-path, background-color, -webkit-clip-path;
+}
+
+.top-inner {
+  margin: 20px;
+  text-align: center;
+}
+
+.bottom:hover > div {
+  -webkit-clip-path: circle(100%);
+          clip-path: circle(100%);
+  background-color: #baf1e4;
+}
+
+#service1 {
+  background-image: url("images/sewing1.jpg");
+}
+
+#service2 {
+  background-image: url("images/sewing2.jpg");
+}
+
+#service3 {
+  background-image: url("images/sewing3.jpg");
+}
+
+#service4 {
+  background-image: url("images/sewing4.jpg");
+}
+
+#service5 {
+  background-image: url("images/sewing5.jpg");
+}
+
+#services .callEmail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#testimonials {
+  background-color: #fa3c5a;
+  min-height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#testimonialsInner {
+  background-color: #baf1e4;
+  width: 60%;
+  height: 85%;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 1000px) {
+  #testimonialsInner {
+    width: 90%;
+  }
+}
+
+#name {
+  font-family: mostly-mono;
+  font-size: 3rem;
+}
+
+#review {
+  font-family: goodfish;
+  font-size: 1.5rem;
+}
+
+.quote {
+  font-size: 3rem;
+}
+
+.quote:first-child {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.quote:last-child {
+  text-align: right;
+  margin-top: 20px;
+}
+
+#testimonials .callEmail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 55vh;
+}
+
+#contact div {
+  margin: 10px;
+}
+
+#contactTitle {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+#contactInner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#contact i {
+  font-size: 3rem;
+  margin: 15px;
+}
+
+#contact a {
+  color: black;
+}
+
+footer {
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  background-color: #fc6c8c;
+  font-family: mostly-mono;
+}
+
+footer i {
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 960px) {
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+  }
+  #hero {
+    height: 70vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: left;
+        -ms-flex-align: left;
+            align-items: left;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #hero div {
+    max-width: 90vw;
+    margin-left: 5px;
+  }
+  #about {
+    height: 70vh;
+  }
+  #about {
+    margin-bottom: 70vh;
+  }
+  #about p {
+    font-size: 1rem;
+  }
+  #about div {
+    width: 80vw;
+    margin: 10px;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  button {
+    font-size: 1.5rem;
+    width: 200px;
+  }
+  #contactInner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  small {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 1.2rem;
+    width: 150px;
+    margin: 5px;
+  }
+  .bottom {
+    width: 350px;
+    height: 250px;
+  }
+  .top {
+    height: 250px;
+    width: 350px;
+  }
+}
+
+/* 
+827- testimonial after extends over div boundary.
+
+
+
+About us text needs to scale.
+center text on 'services'. 
+testimonials text/before and after needs to scale.
+*/
+/*# sourceMappingURL=style.css.map */
